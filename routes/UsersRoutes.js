@@ -10,7 +10,7 @@ router.post('/register/users',
   UserValidator.create,
   UsersController.create);
 
-router.get('company/users',
+router.post('/company/users',
   verifyToken,
   UsersController.findOne);
 

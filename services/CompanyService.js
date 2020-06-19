@@ -9,10 +9,10 @@ module.exports = {
   findOneByName: (name) => Companys.find({ name }),
   findAll: () => Companys.find({ is_active: true }),
   findOneByEmail: (email) => Companys.findOne({ email }),
-  findOneEmployee: (company) => {
-    const findemployee = company.employee.id();
+ /*  findOneEmployee: (company) => {
+    const findemployee = company.employee.();
     return findemployee;
-  },
+  }, */
   removeOneEmployee: (company, idEmployee) => {
     // eslint-disable-next-line no-underscore-dangle
     const filteredEmployee = company.filter((employee) => !employee._id === idEmployee);

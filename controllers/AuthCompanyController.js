@@ -11,7 +11,7 @@ module.exports = {
     /* // eslint-disable-next-line no-console
       console.log(newcompany); */
     } catch (error) {
-      res.status(400).json({ message: 'Aqui esta el error', error });
+      res.status(400).json({ message: 'Aqui esta el error' });
     }
   },
   login: (req, res) => {

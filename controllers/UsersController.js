@@ -4,7 +4,7 @@ const { UserService, CompanyService } = require('../services');
 module.exports = {
   create: async (req, res) => {
     try {
-      const createEmployee = await UserService.create(req.body);
+      const createEmployee = UserService.create(req.body);
       createEmployee.password = undefined;
       res.status(201).json(createEmployee);
     } catch (error) {
@@ -14,8 +14,9 @@ module.exports = {
             if (userExists) res.status(400).json({message: 'User already exist'}) */
   },
   findOne: async (req, res) => {
+    const { first_name } = req.body;
     try {
-      const employee = await CompanyService.findOneEmployee();
+      const employee = await UserService.findOneByName(first_name);
       res.status(200).json(employee);
     } catch (error) {
       res.status(404).json({ message: 'Employee not found', error });
