@@ -6,12 +6,12 @@ module.exports = {
     try {
       const newCompany = await CompanyService.create(req.body);
       // eslint-disable-next-line no-param-reassign
-      newcompany.password = undefined;
+      newCompany.password = undefined;
       res.status(201).json(newCompany);
     /* // eslint-disable-next-line no-console
       console.log(newcompany); */
     } catch (error) {
-      res.status(400).json({ message: 'Aqui esta el error', error });
+      res.status(400).json({ message: 'Aqui esta el error' });
     }
   },
   login: (req, res) => {

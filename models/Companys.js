@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 const SALT_WORK_FACTOR = 10;
 
-const { UsersSchema } = require('./Users');
+// const { UsersSchema } = require('./Users');
 
 const CompanysSchema = mongoose.Schema({
   name: {
@@ -32,7 +32,7 @@ const CompanysSchema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  employee: [UsersSchema],
+  /* employee: [UsersSchema], */
 });
 
 CompanysSchema.pre('save', function (next) {

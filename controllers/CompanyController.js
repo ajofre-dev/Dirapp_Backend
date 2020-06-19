@@ -14,7 +14,6 @@ module.exports = {
   findSelf: async (req, res) => {
     const { name } = req.body;
     // eslint-disable-next-line no-console
-    console.log(name);
     try {
       const company = await CompanyService.findOneByName(name);
       res.status(200).json(company);

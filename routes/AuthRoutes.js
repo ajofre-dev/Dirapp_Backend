@@ -12,15 +12,15 @@ router.post('/register',
   AuthCompanyController.register);
 
 router.post('/register-user',
-  AuthUserValidator.registerUser,
-  AuthUserController.registerUser);
+  AuthUserValidator.registeruser,
+  AuthUserController.registeruser);
 
 router.post('/login',
   AuthCompanyController.login,
   AuthCompanyValidator.login);
 
 router.post('/login-user',
-  AuthUserValidator.loginUser,
-  AuthUserController.loginUser);
+  AuthUserValidator.loginuser,
+  AuthUserController.loginuser);
 
 module.exports = router;

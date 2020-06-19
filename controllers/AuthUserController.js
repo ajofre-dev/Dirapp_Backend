@@ -1,21 +1,22 @@
-const { UsersService } = require('../services');
+const { UserService } = require('../services');
 const { comparePasswords, createToken } = require('../utils');
 
 module.exports = {
-  registerUser: async (req, res) => {
+  registeruser: async (req, res) => {
     try {
-      const newUser = await UsersService.create(req.body);
-      newUser.password = undefined;
-      res.status(201).json(newUser);
+      const user = await UserService.create(req.body);
+      user.password = undefined;
+      res.status(201).json(user);
+      console.log(user);
     } catch (error) {
-      res.status(400).json(error);
+      res.status(400).json({ message: 'No se puede desde aqui' });
     }
   },
-  loginUser: (req, res) => {
+  loginuser: (req, res) => {
     const { email, password } = req.body;
     let globalUser;
     // 1) Comprobar que el correo existe
-    UsersService.findOneByEmail(email)
+    UserService.findOneByEmail(email)
       .then((user) => {
         globalUser = user;
         if (!user) res.status(404).json({ message: 'Credentials Error' });

@@ -76,4 +76,4 @@ UsersSchema.pre('save', function (next) {
 
 const Users = mongoose.model('Users', UsersSchema);
 
-module.exports = { UsersSchema, Users };
+module.exports = Users;
