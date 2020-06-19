@@ -4,10 +4,10 @@ const { comparePasswords, createToken } = require('../utils');
 module.exports = {
   register: async (req, res) => {
     try {
-      const newcompany = await CompanyService.create(req.body);
+      const newCompany = await CompanyService.create(req.body);
       // eslint-disable-next-line no-param-reassign
       newcompany.password = undefined;
-      res.status(201).json(newcompany);
+      res.status(201).json(newCompany);
     /* // eslint-disable-next-line no-console
       console.log(newcompany); */
     } catch (error) {
