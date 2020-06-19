@@ -1,0 +1,29 @@
+{
+  "name": "41-backend",
+  "version": "0.0.1",
+  "description": "Arquitectura MVC",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "celebrate": "^12.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.18"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "scripts": {
+    "start":"node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"**/*.js\"",
+    "lint-fix": "eslint \"**/*.js\" --fix"
+  },
+  "author": "Manuel Paz",
+  "license": "MIT"
+}
