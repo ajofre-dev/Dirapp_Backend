@@ -33,7 +33,6 @@ const CompanysSchema = mongoose.Schema({
     default: true,
   },
   /* employee: [UsersSchema], */
-});
 
 CompanysSchema.pre('save', function (next) {
   const company = this;
