@@ -4,9 +4,9 @@ const { comparePasswords, createToken } = require('../utils');
 module.exports = {
   registerUser: async (req, res) => {
     try {
-      const newUser = await UsersService.create(req.body);
-      newUser.password = undefined;
-      res.status(201).json(newUser);
+      const newEmployee = await UsersService.create(req.body);
+      newEmployee.password = undefined;
+      res.status(201).json(newEmployee);
     } catch (error) {
       res.status(400).json(error);
     }

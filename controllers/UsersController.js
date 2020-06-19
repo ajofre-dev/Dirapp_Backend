@@ -5,7 +5,7 @@ module.exports = {
   create: async (req, res) => {
     try {
       const createEmployee = await UserService.create(req.body);
-      newUser.password = undefined;
+      createEmployee.password = undefined;
       res.status(201).json(createEmployee);
     } catch (error) {
       res.status(400).json({ message: 'Error to create user employee' });
