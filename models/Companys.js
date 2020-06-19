@@ -32,7 +32,7 @@ const CompanysSchema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  employee: [UsersSchema],
+  //employee: [UsersSchema],
 });
 
 CompanysSchema.pre('save', function (next) {
