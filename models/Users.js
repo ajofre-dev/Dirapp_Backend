@@ -9,18 +9,14 @@ const UsersSchema = mongoose.Schema({
   first_name: {
     type: String,
     require: true,
-    trin: true,
   },
   last_name: {
     type: String,
     require: true,
-    trin: true,
   },
-  mail: {
+  email: {
     type: String,
     require: true,
-    trin: true,
-    unique: true,
   },
   /*  profile_img {
     type: String,
@@ -28,7 +24,6 @@ const UsersSchema = mongoose.Schema({
   password: {
     type: String,
     require: true,
-    trim: true,
   },
   work_space: {
     type: String,

@@ -2,20 +2,20 @@ const { UsersService } = require('../services');
 const { comparePasswords, createToken } = require('../utils');
 
 module.exports = {
-  registerUser: (req, res) => {
-    UsersService.create(req.body)
-      .then((user) => {
-        // eslint-disable-next-line no-param-reassign
-        user.password = undefined;
-        res.status(201).json(user);
-      })
-      .catch((err) => res.status(400).json(err));
+  registerUser: async (req, res) => {
+    try {
+      const newUser = await UsersService.create(req.body);
+      newUser.password = undefined;
+      res.status(201).json(newUser);
+    } catch (error) {
+      res.status(400).json(error);
+    }
   },
   loginUser: (req, res) => {
-    const { mail, password } = req.body;
+    const { email, password } = req.body;
     let globalUser;
     // 1) Comprobar que el correo existe
-    UsersService.findOneByEmail(mail)
+    UsersService.findOneByEmail(email)
       .then((user) => {
         globalUser = user;
         if (!user) res.status(404).json({ message: 'Credentials Error' });
